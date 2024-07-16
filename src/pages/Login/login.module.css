@@ -1,0 +1,96 @@
+.main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.background {
+  align-items: center;
+  background-color: rgb(65, 25, 127, 1);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  height: 26.375rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.icon {
+  flex-shrink: 0;
+  height: 9.828rem;
+  margin-top: 8.95rem;
+  width: 12.375rem;
+}
+
+.image {
+  flex-shrink: 0;
+  height: 17.438rem;
+  margin-top: 0.29rem;
+  width: 28.625rem;
+}
+
+.form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  color: rgb(65, 25, 127, 1);
+  font-family: Epilogue , sans-serif;
+  font-size: 1.25rem;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0.206rem;
+  line-height: normal;
+  margin-top: 4rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.formInput {
+  border: 0.5px solid rgb(65, 25, 127, 1);
+  border-radius: 0.313rem;
+  color: rgb(65, 25, 127, 1);
+  flex-shrink: 0;
+  font-family: Epilogue , sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 300;
+  height: 2.5rem;
+  line-height: normal;
+  margin-bottom: 0.65rem;
+  width: 17.25rem;
+}
+
+.btn {
+  background: rgb(252, 196, 54);
+  border-radius: 0.313rem;
+  color: white;
+  flex-shrink: 0;
+  font-family: Epilogue , sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 700;
+  height: 2.5rem;
+  letter-spacing: 0.026rem;
+  line-height: normal;
+  margin-bottom: 6rem;
+  text-align: center;
+  text-transform: uppercase;
+  width: 17.25rem;
+}
+
+.input {
+  align-items: center;
+  background-color: #41197f;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  width: 95%;
+}
+

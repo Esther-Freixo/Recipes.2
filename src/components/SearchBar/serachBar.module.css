@@ -1,0 +1,67 @@
+.conteiner {
+  display: flex;
+  justify-content: center;
+}
+
+.input {
+  background: white;
+  border: 1px solid rgb(177, 177, 177);
+  border-radius: 0.31rem;
+  color: rgb(121, 125, 134);
+  flex-shrink: 0;
+  font-family: Epilogue , sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 300;
+  height: 2.5rem;
+  line-height: normal;
+  padding-left: 1.09rem;
+  width: 21.125rem;
+}
+
+.searchConteiner {
+  align-items: center;
+  background: rgb(65, 25, 127);
+  border-radius: 0.625rem;
+  display: flex;
+  flex-direction: column;
+  height: 6.75rem;
+  justify-content: center;
+  padding-bottom: 0.5rem;
+  width: 22.4rem;
+}
+
+.labels {
+  color: white;
+  font-family: Epilogue , sans-serif;
+  font-size: 0.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 0.69rem;
+}
+
+
+.filtersBtn {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.btnSearch {
+  background: rgb(252, 196, 54);
+  border-radius: 0.31rem;
+  color: white;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-family: Epilogue , sans-serif;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  height: 1.56rem;
+  letter-spacing: 0.022rem;
+  line-height: normal;
+  text-align: center;
+  text-transform: uppercase;
+  width: 13rem;
+}

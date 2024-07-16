@@ -1,0 +1,53 @@
+.header {
+  background: rgba(252, 220, 54, 1);
+  flex-shrink: 0;
+  height: 3.25rem;
+  width: 100%;
+}
+
+.nav {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 1.62rem;
+  margin-top: 0.38rem;
+  width: 10.5rem;
+}
+
+.appIcon {
+  flex-shrink: 0;
+  height: 2.4rem;
+  width: 2.6rem;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 1.33rem;
+  margin-top: 0.38rem;
+  width: 5.5rem;
+}
+
+.searchBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.title {
+  color: rgb(65, 25, 127);
+  font-family: Epilogue , sans-serif;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: 0.131rem;
+  line-height: normal;
+  text-align: center;
+  text-transform: uppercase;
+}

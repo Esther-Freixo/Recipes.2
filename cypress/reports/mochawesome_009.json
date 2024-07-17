@@ -1,0 +1,444 @@
+{
+  "stats": {
+    "suites": 7,
+    "tests": 12,
+    "passes": 10,
+    "pending": 0,
+    "failures": 2,
+    "start": "2024-01-23T10:43:43.308Z",
+    "end": "2024-01-23T10:43:54.531Z",
+    "duration": 11223,
+    "testsRegistered": 12,
+    "passPercent": 83.33333333333334,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f86dc723-976e-4d47-b019-b446a318efc6",
+      "title": "",
+      "fullFile": "cypress/e2e/43-48.done_recipes.cy.js",
+      "file": "cypress/e2e/43-48.done_recipes.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5df4ea31-65af-4bd2-afdf-d21e88838f9f",
+          "title": "Done recipes screen",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "9e62a99e-0843-4bbb-8620-ff4a414e825a",
+              "title": "43 - Implemente os elementos da tela de receitas feitas respeitando os atributos descritos no protótipo",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Todos os data-testids estão disponíveis",
+                  "fullTitle": "Done recipes screen 43 - Implemente os elementos da tela de receitas feitas respeitando os atributos descritos no protótipo Todos os data-testids estão disponíveis",
+                  "timedOut": null,
+                  "duration": 531,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('[data-testid=\"filter-by-all-btn\"]');\ncy.get('[data-testid=\"filter-by-meal-btn\"]');\ncy.get('[data-testid=\"filter-by-drink-btn\"]');\ncy.get('[data-testid=\"0-horizontal-image\"]');\ncy.get('[data-testid=\"0-horizontal-top-text\"]');\ncy.get('[data-testid=\"0-horizontal-name\"]');\ncy.get('[data-testid=\"0-horizontal-done-date\"]');\ncy.get('[data-testid=\"0-horizontal-share-btn\"]');\ncy.get('[data-testid=\"0-Pasta-horizontal-tag\"]');\ncy.get('[data-testid=\"0-Curry-horizontal-tag\"]');\ncy.get('[data-testid=\"1-horizontal-image\"]');\ncy.get('[data-testid=\"1-horizontal-top-text\"]');\ncy.get('[data-testid=\"1-horizontal-name\"]');\ncy.get('[data-testid=\"1-horizontal-share-btn\"]');\ncy.get('[data-testid=\"1-horizontal-done-date\"]');",
+                  "err": {},
+                  "uuid": "2df12b18-a382-459f-92a9-4e1988074c1a",
+                  "parentUUID": "9e62a99e-0843-4bbb-8620-ff4a414e825a",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "2df12b18-a382-459f-92a9-4e1988074c1a"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 531,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "58396c4d-49ce-4930-84fa-a9a675981684",
+              "title": "44 - Desenvolva a tela de modo que, caso a receita do card seja uma comida, ela deve possuir: a foto da receita,  nome, categoria, nacionalidade, a data em que a pessoa fez a receita, as 2 primeiras tags retornadas pela API e um botão de compartilhar",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "O card possui os atributos corretos de uma comida",
+                  "fullTitle": "Done recipes screen 44 - Desenvolva a tela de modo que, caso a receita do card seja uma comida, ela deve possuir: a foto da receita,  nome, categoria, nacionalidade, a data em que a pessoa fez a receita, as 2 primeiras tags retornadas pela API e um botão de compartilhar O card possui os atributos corretos de uma comida",
+                  "timedOut": null,
+                  "duration": 159,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('[data-testid=\"0-horizontal-image\"]').should('have.attr', 'src').should('include', doneRecipes[0].image);\ncy.get('[data-testid=\"0-horizontal-top-text\"]').contains(`${doneRecipes[0].nationality} - ${doneRecipes[0].category}`);\ncy.get('[data-testid=\"0-horizontal-name\"]').contains(doneRecipes[0].name);\ncy.get('[data-testid=\"0-horizontal-share-btn\"]').should('have.attr', 'src').should('include', 'shareIcon');\ncy.get('[data-testid=\"0-horizontal-done-date\"]').contains('23/06/2020');\ncy.get('[data-testid=\"0-Pasta-horizontal-tag\"]').contains(doneRecipes[0].tags[0]);\ncy.get('[data-testid=\"0-Curry-horizontal-tag\"]').contains(doneRecipes[0].tags[1]);",
+                  "err": {},
+                  "uuid": "11478f88-4847-423a-ad47-29786d492e39",
+                  "parentUUID": "58396c4d-49ce-4930-84fa-a9a675981684",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "11478f88-4847-423a-ad47-29786d492e39"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 159,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "2081bd02-7b3d-43d3-938b-77bce43ed70d",
+              "title": "45 - Desenvolva a tela de maneira que, caso a receita do card seja uma bebida, ela deve possuir: a foto da receita, o nome, se é alcoólica, a data em que a pessoa fez a receita e um botão de compartilhar",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "O card possui os atributos corretos de uma bebida",
+                  "fullTitle": "Done recipes screen 45 - Desenvolva a tela de maneira que, caso a receita do card seja uma bebida, ela deve possuir: a foto da receita, o nome, se é alcoólica, a data em que a pessoa fez a receita e um botão de compartilhar O card possui os atributos corretos de uma bebida",
+                  "timedOut": null,
+                  "duration": 134,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('[data-testid=\"1-horizontal-image\"]').should('have.attr', 'src').should('include', doneRecipes[1].image);\ncy.get('[data-testid=\"1-horizontal-top-text\"]').contains(doneRecipes[1].alcoholicOrNot);\ncy.get('[data-testid=\"1-horizontal-name\"]').contains(doneRecipes[1].name);\ncy.get('[data-testid=\"1-horizontal-share-btn\"]').should('have.attr', 'src').should('include', 'shareIcon');\ncy.get('[data-testid=\"0-horizontal-done-date\"]').contains('23/06/2020');",
+                  "err": {},
+                  "uuid": "c6962089-8765-460a-b566-c8f3a37e762f",
+                  "parentUUID": "2081bd02-7b3d-43d3-938b-77bce43ed70d",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Verifica a cobertura de 45% da tela de Receitas Feitas",
+                  "fullTitle": "Done recipes screen 45 - Desenvolva a tela de maneira que, caso a receita do card seja uma bebida, ela deve possuir: a foto da receita, o nome, se é alcoólica, a data em que a pessoa fez a receita e um botão de compartilhar Verifica a cobertura de 45% da tela de Receitas Feitas",
+                  "timedOut": null,
+                  "duration": 3373,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.getCoverage().its('DoneRecipes.functions.pct', {\n  timeout: 0\n}).should('be.gte', 45.00);\ncy.getCoverage().its('DoneRecipes.branches.pct', {\n  timeout: 0\n}).should('be.gte', 45.00);",
+                  "err": {
+                    "message": "CypressError: `cy.task('getCoverage')` failed with the following error:\n\n> Command failed: npm run cy-coverage ./src\n⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯\n\n FAIL  src/tests/App.test.tsx > Farewell, front-end\nTestingLibraryElementError: Unable to find an element with the text: /TRYBE/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.\n\nIgnored nodes: comments, script, style\n<body>\n  <div>\n    <div>\n      <form>\n        <label\n          for=\"email-input\"\n        >\n          Email:\n          <input\n            data-testid=\"email-input\"\n            type=\"email\"\n          />\n        </label>\n        <label\n          for=\"password-input\"\n        >\n          Senha:\n          <input\n            data-testid=\"password-input\"\n            type=\"password\"\n          />\n        </label>\n        <button\n          data-testid=\"login-submit-btn\"\n        >\n          Enter\n        </button>\n      </form>\n    </div>\n  </div>\n</body>\n ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19\n ❯ node_modules/@testing-library/dom/dist/query-helpers.js:76:38\n ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17\n ❯ getByText node_modules/@testing-library/dom/dist/query-helpers.js:95:19\n ❯ src/tests/App.test.tsx:8:30\n      6|   // Este arquivo pode ser modificado ou deletado sem problemas\n      7|   render(<App />);\n      8|   const linkElement = screen.getByText(/TRYBE/i);\n       |                              ^\n      9|   expect(linkElement).toBeInTheDocument();\n     10| });\n\n⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯\n\nhttps://on.cypress.io/api/task",
+                    "estack": "CypressError: `cy.task('getCoverage')` failed with the following error:\n\n> Command failed: npm run cy-coverage ./src\n⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯\n\n FAIL  src/tests/App.test.tsx > Farewell, front-end\nTestingLibraryElementError: Unable to find an element with the text: /TRYBE/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.\n\nIgnored nodes: comments, script, style\n<body>\n  <div>\n    <div>\n      <form>\n        <label\n          for=\"email-input\"\n        >\n          Email:\n          <input\n            data-testid=\"email-input\"\n            type=\"email\"\n          />\n        </label>\n        <label\n          for=\"password-input\"\n        >\n          Senha:\n          <input\n            data-testid=\"password-input\"\n            type=\"password\"\n          />\n        </label>\n        <button\n          data-testid=\"login-submit-btn\"\n        >\n          Enter\n        </button>\n      </form>\n    </div>\n  </div>\n</body>\n ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19\n ❯ node_modules/@testing-library/dom/dist/query-helpers.js:76:38\n ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17\n ❯ getByText node_modules/@testing-library/dom/dist/query-helpers.js:95:19\n ❯ src/tests/App.test.tsx:8:30\n      6|   // Este arquivo pode ser modificado ou deletado sem problemas\n      7|   render(<App />);\n      8|   const linkElement = screen.getByText(/TRYBE/i);\n       |                              ^\n      9|   expect(linkElement).toBeInTheDocument();\n     10| });\n\n⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯\n\nhttps://on.cypress.io/api/task\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135281:70)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://recipes-app-test/./cypress/support/commands.js:26:45)\n\nFrom Node.js Internals:\n  Error: Command failed: npm run cy-coverage ./src\n  ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯\n  \n   FAIL  src/tests/App.test.tsx > Farewell, front-end\n  TestingLibraryElementError: Unable to find an element with the text: /TRYBE/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.\n  \n  Ignored nodes: comments, script, style\n  <body>\n    <div>\n      <div>\n        <form>\n          <label\n            for=\"email-input\"\n          >\n            Email:\n            <input\n              data-testid=\"email-input\"\n              type=\"email\"\n            />\n          </label>\n          <label\n            for=\"password-input\"\n          >\n            Senha:\n            <input\n              data-testid=\"password-input\"\n              type=\"password\"\n            />\n          </label>\n          <button\n            data-testid=\"login-submit-btn\"\n          >\n            Enter\n          </button>\n        </form>\n      </div>\n    </div>\n  </body>\n   ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19\n   ❯ node_modules/@testing-library/dom/dist/query-helpers.js:76:38\n   ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17\n   ❯ getByText node_modules/@testing-library/dom/dist/query-helpers.js:95:19\n   ❯ src/tests/App.test.tsx:8:30\n        6|   // Este arquivo pode ser modificado ou deletado sem problemas\n        7|   render(<App />);\n        8|   const linkElement = screen.getByText(/TRYBE/i);\n         |                              ^\n        9|   expect(linkElement).toBeInTheDocument();\n       10| });\n  \n  ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯\n  \n  \n      at ChildProcess.exithandler (node:child_process:419:12)\n      at ChildProcess.emit (node:events:514:28)\n      at ChildProcess.emit (node:domain:489:12)\n      at maybeClose (node:internal/child_process:1091:16)\n      at Process.ChildProcess._handle.onexit (node:internal/child_process:302:5)",
+                    "diff": null
+                  },
+                  "uuid": "4d0aa74a-46bc-4749-a7ad-4942b0388f6e",
+                  "parentUUID": "2081bd02-7b3d-43d3-938b-77bce43ed70d",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "c6962089-8765-460a-b566-c8f3a37e762f"
+              ],
+              "failures": [
+                "4d0aa74a-46bc-4749-a7ad-4942b0388f6e"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 3507,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "8ea73348-19f1-4909-bc63-df3d83170015",
+              "title": "46 - Desenvolva a solução de modo que o botão de compartilhar deve copiar a URL da tela de detalhes da receita para o clipboard",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Ao clicar no botão de compartilhar deve aparecer a mensagem \"Link copied!\"",
+                  "fullTitle": "Done recipes screen 46 - Desenvolva a solução de modo que o botão de compartilhar deve copiar a URL da tela de detalhes da receita para o clipboard Ao clicar no botão de compartilhar deve aparecer a mensagem \"Link copied!\"",
+                  "timedOut": null,
+                  "duration": 206,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('[data-testid=\"0-horizontal-share-btn\"]').click();\ncy.contains('Link copied!');",
+                  "err": {},
+                  "uuid": "e155fdcc-a2f1-4c2b-9747-36e7283828b0",
+                  "parentUUID": "8ea73348-19f1-4909-bc63-df3d83170015",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "A URL da tela de detalhes da receita é copiada para o clipboard",
+                  "fullTitle": "Done recipes screen 46 - Desenvolva a solução de modo que o botão de compartilhar deve copiar a URL da tela de detalhes da receita para o clipboard A URL da tela de detalhes da receita é copiada para o clipboard",
+                  "timedOut": null,
+                  "duration": 193,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('[data-testid=\"0-horizontal-share-btn\"]').click();\ncy.get('@clipboard').should('be.calledWithExactly', `http://localhost:3000/meals/52771`);",
+                  "err": {},
+                  "uuid": "1cfb0d9b-4fd1-4112-a13a-e71dc9b5f564",
+                  "parentUUID": "8ea73348-19f1-4909-bc63-df3d83170015",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "e155fdcc-a2f1-4c2b-9747-36e7283828b0",
+                "1cfb0d9b-4fd1-4112-a13a-e71dc9b5f564"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 399,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "0ae329c9-3195-49bf-a0ee-4b8fd21f11a1",
+              "title": "47 - Implemente 2 botões que filtram as receitas por comida ou bebida e um terceiro que remove todos os filtros",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Ao clicar no botão \"Meal\" as receitas devem ser filtradas por comidas",
+                  "fullTitle": "Done recipes screen 47 - Implemente 2 botões que filtram as receitas por comida ou bebida e um terceiro que remove todos os filtros Ao clicar no botão \"Meal\" as receitas devem ser filtradas por comidas",
+                  "timedOut": null,
+                  "duration": 191,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('[data-testid=\"filter-by-meal-btn\"]').click();\ncy.get('[data-testid=\"0-horizontal-name\"]').contains(doneRecipes[0].name);\ncy.get('[data-testid=\"1-horizontal-name\"]').should('not.exist');",
+                  "err": {},
+                  "uuid": "7747409f-9fdf-4ad1-a925-50440cd958b6",
+                  "parentUUID": "0ae329c9-3195-49bf-a0ee-4b8fd21f11a1",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Ao clicar no botão \"Drinks\" as receitas devem ser filtradas por bebidas",
+                  "fullTitle": "Done recipes screen 47 - Implemente 2 botões que filtram as receitas por comida ou bebida e um terceiro que remove todos os filtros Ao clicar no botão \"Drinks\" as receitas devem ser filtradas por bebidas",
+                  "timedOut": null,
+                  "duration": 166,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('[data-testid=\"filter-by-drink-btn\"]').click();\ncy.get('[data-testid=\"0-horizontal-name\"]').contains(doneRecipes[1].name);\ncy.get('[data-testid=\"1-horizontal-name\"]').should('not.exist');",
+                  "err": {},
+                  "uuid": "20a41593-e144-488f-8168-7e1cfa12bd5b",
+                  "parentUUID": "0ae329c9-3195-49bf-a0ee-4b8fd21f11a1",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Ao clicar no botão \"All\" o filtro deve ser removido",
+                  "fullTitle": "Done recipes screen 47 - Implemente 2 botões que filtram as receitas por comida ou bebida e um terceiro que remove todos os filtros Ao clicar no botão \"All\" o filtro deve ser removido",
+                  "timedOut": null,
+                  "duration": 262,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('[data-testid=\"filter-by-meal-btn\"]').click();\ncy.get('[data-testid=\"filter-by-all-btn\"]').click();\ncy.get('[data-testid=\"0-horizontal-name\"]').contains(doneRecipes[0].name);\ncy.get('[data-testid=\"1-horizontal-name\"]').contains(doneRecipes[1].name);",
+                  "err": {},
+                  "uuid": "77e972b0-f4ce-4d73-9461-3ec12a2d1c62",
+                  "parentUUID": "0ae329c9-3195-49bf-a0ee-4b8fd21f11a1",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "7747409f-9fdf-4ad1-a925-50440cd958b6",
+                "20a41593-e144-488f-8168-7e1cfa12bd5b",
+                "77e972b0-f4ce-4d73-9461-3ec12a2d1c62"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 619,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "be69cc52-e4ee-4f45-a181-2866c3dcff17",
+              "title": "48 - Redirecione para a tela de detalhes da receita caso seja clicado na foto ou no nome da receita",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Ao clicar na foto da receita, a rota deve mudar para a tela de detalhes daquela receita",
+                  "fullTitle": "Done recipes screen 48 - Redirecione para a tela de detalhes da receita caso seja clicado na foto ou no nome da receita Ao clicar na foto da receita, a rota deve mudar para a tela de detalhes daquela receita",
+                  "timedOut": null,
+                  "duration": 214,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('[data-testid=\"0-horizontal-image\"]').click();\ncy.location().should(loc => expect(loc.pathname).to.eq('/meals/52771'));",
+                  "err": {},
+                  "uuid": "a3d85642-b2d9-469d-a9cc-1935477d6940",
+                  "parentUUID": "be69cc52-e4ee-4f45-a181-2866c3dcff17",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Ao clicar no nome da receita, a rota deve mudar para a tela de detalhes daquela receita",
+                  "fullTitle": "Done recipes screen 48 - Redirecione para a tela de detalhes da receita caso seja clicado na foto ou no nome da receita Ao clicar no nome da receita, a rota deve mudar para a tela de detalhes daquela receita",
+                  "timedOut": null,
+                  "duration": 232,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('[data-testid=\"1-horizontal-name\"]').click();\ncy.location().should(loc => expect(loc.pathname).to.eq('/drinks/178319'));",
+                  "err": {},
+                  "uuid": "520670ab-77e4-4826-9189-8619ff24c07a",
+                  "parentUUID": "be69cc52-e4ee-4f45-a181-2866c3dcff17",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Verifica a cobertura de 90% da tela de Receitas Feitas",
+                  "fullTitle": "Done recipes screen 48 - Redirecione para a tela de detalhes da receita caso seja clicado na foto ou no nome da receita Verifica a cobertura de 90% da tela de Receitas Feitas",
+                  "timedOut": null,
+                  "duration": 3234,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.getCoverage().its('DoneRecipes.functions.pct', {\n  timeout: 0\n}).should('be.gte', 90.00);\ncy.getCoverage().its('DoneRecipes.branches.pct', {\n  timeout: 0\n}).should('be.gte', 90.00);",
+                  "err": {
+                    "message": "CypressError: `cy.task('getCoverage')` failed with the following error:\n\n> Command failed: npm run cy-coverage ./src\n⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯\n\n FAIL  src/tests/App.test.tsx > Farewell, front-end\nTestingLibraryElementError: Unable to find an element with the text: /TRYBE/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.\n\nIgnored nodes: comments, script, style\n<body>\n  <div>\n    <div>\n      <form>\n        <label\n          for=\"email-input\"\n        >\n          Email:\n          <input\n            data-testid=\"email-input\"\n            type=\"email\"\n          />\n        </label>\n        <label\n          for=\"password-input\"\n        >\n          Senha:\n          <input\n            data-testid=\"password-input\"\n            type=\"password\"\n          />\n        </label>\n        <button\n          data-testid=\"login-submit-btn\"\n        >\n          Enter\n        </button>\n      </form>\n    </div>\n  </div>\n</body>\n ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19\n ❯ node_modules/@testing-library/dom/dist/query-helpers.js:76:38\n ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17\n ❯ getByText node_modules/@testing-library/dom/dist/query-helpers.js:95:19\n ❯ src/tests/App.test.tsx:8:30\n      6|   // Este arquivo pode ser modificado ou deletado sem problemas\n      7|   render(<App />);\n      8|   const linkElement = screen.getByText(/TRYBE/i);\n       |                              ^\n      9|   expect(linkElement).toBeInTheDocument();\n     10| });\n\n⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯\n\nhttps://on.cypress.io/api/task",
+                    "estack": "CypressError: `cy.task('getCoverage')` failed with the following error:\n\n> Command failed: npm run cy-coverage ./src\n⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯\n\n FAIL  src/tests/App.test.tsx > Farewell, front-end\nTestingLibraryElementError: Unable to find an element with the text: /TRYBE/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.\n\nIgnored nodes: comments, script, style\n<body>\n  <div>\n    <div>\n      <form>\n        <label\n          for=\"email-input\"\n        >\n          Email:\n          <input\n            data-testid=\"email-input\"\n            type=\"email\"\n          />\n        </label>\n        <label\n          for=\"password-input\"\n        >\n          Senha:\n          <input\n            data-testid=\"password-input\"\n            type=\"password\"\n          />\n        </label>\n        <button\n          data-testid=\"login-submit-btn\"\n        >\n          Enter\n        </button>\n      </form>\n    </div>\n  </div>\n</body>\n ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19\n ❯ node_modules/@testing-library/dom/dist/query-helpers.js:76:38\n ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17\n ❯ getByText node_modules/@testing-library/dom/dist/query-helpers.js:95:19\n ❯ src/tests/App.test.tsx:8:30\n      6|   // Este arquivo pode ser modificado ou deletado sem problemas\n      7|   render(<App />);\n      8|   const linkElement = screen.getByText(/TRYBE/i);\n       |                              ^\n      9|   expect(linkElement).toBeInTheDocument();\n     10| });\n\n⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯\n\nhttps://on.cypress.io/api/task\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135281:70)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://recipes-app-test/./cypress/support/commands.js:26:45)\n\nFrom Node.js Internals:\n  Error: Command failed: npm run cy-coverage ./src\n  ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯\n  \n   FAIL  src/tests/App.test.tsx > Farewell, front-end\n  TestingLibraryElementError: Unable to find an element with the text: /TRYBE/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.\n  \n  Ignored nodes: comments, script, style\n  <body>\n    <div>\n      <div>\n        <form>\n          <label\n            for=\"email-input\"\n          >\n            Email:\n            <input\n              data-testid=\"email-input\"\n              type=\"email\"\n            />\n          </label>\n          <label\n            for=\"password-input\"\n          >\n            Senha:\n            <input\n              data-testid=\"password-input\"\n              type=\"password\"\n            />\n          </label>\n          <button\n            data-testid=\"login-submit-btn\"\n          >\n            Enter\n          </button>\n        </form>\n      </div>\n    </div>\n  </body>\n   ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19\n   ❯ node_modules/@testing-library/dom/dist/query-helpers.js:76:38\n   ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17\n   ❯ getByText node_modules/@testing-library/dom/dist/query-helpers.js:95:19\n   ❯ src/tests/App.test.tsx:8:30\n        6|   // Este arquivo pode ser modificado ou deletado sem problemas\n        7|   render(<App />);\n        8|   const linkElement = screen.getByText(/TRYBE/i);\n         |                              ^\n        9|   expect(linkElement).toBeInTheDocument();\n       10| });\n  \n  ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯\n  \n  \n      at ChildProcess.exithandler (node:child_process:419:12)\n      at ChildProcess.emit (node:events:514:28)\n      at ChildProcess.emit (node:domain:489:12)\n      at maybeClose (node:internal/child_process:1091:16)\n      at Process.ChildProcess._handle.onexit (node:internal/child_process:302:5)",
+                    "diff": null
+                  },
+                  "uuid": "bc55df62-cba1-4b25-8eaf-60891134ab89",
+                  "parentUUID": "be69cc52-e4ee-4f45-a181-2866c3dcff17",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "a3d85642-b2d9-469d-a9cc-1935477d6940",
+                "520670ab-77e4-4826-9189-8619ff24c07a"
+              ],
+              "failures": [
+                "bc55df62-cba1-4b25-8eaf-60891134ab89"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 3680,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

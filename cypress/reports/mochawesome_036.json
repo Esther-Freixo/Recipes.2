@@ -1,0 +1,368 @@
+{
+  "stats": {
+    "suites": 5,
+    "tests": 9,
+    "passes": 2,
+    "pending": 0,
+    "failures": 7,
+    "start": "2024-01-26T22:54:49.006Z",
+    "end": "2024-01-26T22:54:53.305Z",
+    "duration": 4299,
+    "testsRegistered": 9,
+    "passPercent": 22.22222222222222,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2090bdd8-9ff0-4641-b54b-5e9844ca0a16",
+      "title": "",
+      "fullFile": "cypress/e2e/02-06.login.cy.js",
+      "file": "cypress/e2e/02-06.login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f443f78a-da7c-427a-b827-00230671f768",
+          "title": "2 - Crie todos os elementos que devem respeitar os atributos descritos no protótipo para a tela de login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Tem os data-testids email-input, password-input e login-submit-btn",
+              "fullTitle": "2 - Crie todos os elementos que devem respeitar os atributos descritos no protótipo para a tela de login Tem os data-testids email-input, password-input e login-submit-btn",
+              "timedOut": null,
+              "duration": 558,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/');\ncy.get('[data-testid=\"email-input\"]');\ncy.get('[data-testid=\"password-input\"]');\ncy.get('[data-testid=\"login-submit-btn\"]');",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttp://localhost:3000/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 127.0.0.1:3000\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttp://localhost:3000/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 127.0.0.1:3000\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n    at <unknown> (http://localhost:44381/__cypress/runner/cypress_runner.js:130976:74)\n    at visitFailedByErr (http://localhost:44381/__cypress/runner/cypress_runner.js:130374:12)\n    at <unknown> (http://localhost:44381/__cypress/runner/cypress_runner.js:130975:11)\n    at tryCatcher (http://localhost:44381/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://localhost:44381/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://localhost:44381/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://localhost:44381/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://localhost:44381/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (http://localhost:44381/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://localhost:44381/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://localhost:44381/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://localhost:44381/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://recipes-app-test/./cypress/e2e/02-06.login.cy.js:6:7)\n\nFrom Node.js Internals:\n  Error: connect ECONNREFUSED 127.0.0.1:3000\n      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1494:16)",
+                "diff": null
+              },
+              "uuid": "77c12967-cf98-4fdb-a424-435994739117",
+              "parentUUID": "f443f78a-da7c-427a-b827-00230671f768",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "77c12967-cf98-4fdb-a424-435994739117"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 558,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "1c4b6af4-45e9-4fb0-859e-8f63b403a03b",
+          "title": "3 - Desenvolva a tela de maneira que a pessoa consiga escrever seu email no input de email e sua senha no input de senha",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "É possível escrever o email e a senha",
+              "fullTitle": "3 - Desenvolva a tela de maneira que a pessoa consiga escrever seu email no input de email e sua senha no input de senha É possível escrever o email e a senha",
+              "timedOut": null,
+              "duration": 534,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/');\ncy.get('[data-testid=\"email-input\"]').type('email@mail.com');\ncy.get('[data-testid=\"email-input\"]').should('have.value', 'email@mail.com');\ncy.get('[data-testid=\"password-input\"]').type('1234567');\ncy.get('[data-testid=\"password-input\"]').should('have.value', '1234567');",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttp://localhost:3000/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 127.0.0.1:3000\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttp://localhost:3000/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 127.0.0.1:3000\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n    at <unknown> (http://localhost:44381/__cypress/runner/cypress_runner.js:130976:74)\n    at visitFailedByErr (http://localhost:44381/__cypress/runner/cypress_runner.js:130374:12)\n    at <unknown> (http://localhost:44381/__cypress/runner/cypress_runner.js:130975:11)\n    at tryCatcher (http://localhost:44381/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://localhost:44381/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://localhost:44381/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://localhost:44381/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://localhost:44381/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (http://localhost:44381/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://localhost:44381/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://localhost:44381/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://localhost:44381/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://recipes-app-test/./cypress/e2e/02-06.login.cy.js:16:7)\n\nFrom Node.js Internals:\n  Error: connect ECONNREFUSED 127.0.0.1:3000\n      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1494:16)",
+                "diff": null
+              },
+              "uuid": "97da9dfd-ce3b-494a-b5a7-b9f60a401abf",
+              "parentUUID": "1c4b6af4-45e9-4fb0-859e-8f63b403a03b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "97da9dfd-ce3b-494a-b5a7-b9f60a401abf"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 534,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "7fe9fd27-295e-41ff-ba6e-7d2336eb671d",
+          "title": "4 - Desenvolva a tela de maneira que o formulário só seja válido após um email válido e uma senha de mais de 6 caracteres serem preenchidos",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "O botão deve estar desativado se o email for inválido",
+              "fullTitle": "4 - Desenvolva a tela de maneira que o formulário só seja válido após um email válido e uma senha de mais de 6 caracteres serem preenchidos O botão deve estar desativado se o email for inválido",
+              "timedOut": null,
+              "duration": 540,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/');\ncy.get('[data-testid=\"login-submit-btn\"]').should('be.disabled');\ncy.get('[data-testid=\"email-input\"]').type('email@mail');\ncy.get('[data-testid=\"password-input\"]').type('1234567');\ncy.get('[data-testid=\"login-submit-btn\"]').should('be.disabled');\ncy.get('[data-testid=\"email-input\"]').clear().type('email.com');\ncy.get('[data-testid=\"login-submit-btn\"]').should('be.disabled');",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttp://localhost:3000/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 127.0.0.1:3000\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttp://localhost:3000/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 127.0.0.1:3000\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n    at <unknown> (http://localhost:44381/__cypress/runner/cypress_runner.js:130976:74)\n    at visitFailedByErr (http://localhost:44381/__cypress/runner/cypress_runner.js:130374:12)\n    at <unknown> (http://localhost:44381/__cypress/runner/cypress_runner.js:130975:11)\n    at tryCatcher (http://localhost:44381/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://localhost:44381/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://localhost:44381/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://localhost:44381/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://localhost:44381/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (http://localhost:44381/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://localhost:44381/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://localhost:44381/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://localhost:44381/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://recipes-app-test/./cypress/e2e/02-06.login.cy.js:28:7)\n\nFrom Node.js Internals:\n  Error: connect ECONNREFUSED 127.0.0.1:3000\n      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1494:16)",
+                "diff": null
+              },
+              "uuid": "0b9060ec-5d39-41ba-9f7c-744aedfd6e2c",
+              "parentUUID": "7fe9fd27-295e-41ff-ba6e-7d2336eb671d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "O botão deve estar desativado se a senha deve tiver 6 caracteres ou menos",
+              "fullTitle": "4 - Desenvolva a tela de maneira que o formulário só seja válido após um email válido e uma senha de mais de 6 caracteres serem preenchidos O botão deve estar desativado se a senha deve tiver 6 caracteres ou menos",
+              "timedOut": null,
+              "duration": 540,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/');\ncy.get('[data-testid=\"login-submit-btn\"]').should('be.disabled');\ncy.get('[data-testid=\"email-input\"]').type('email@mail.com');\ncy.get('[data-testid=\"password-input\"]').type('123456');\ncy.get('[data-testid=\"login-submit-btn\"]').should('be.disabled');",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttp://localhost:3000/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 127.0.0.1:3000\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttp://localhost:3000/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 127.0.0.1:3000\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n    at <unknown> (http://localhost:44381/__cypress/runner/cypress_runner.js:130976:74)\n    at visitFailedByErr (http://localhost:44381/__cypress/runner/cypress_runner.js:130374:12)\n    at <unknown> (http://localhost:44381/__cypress/runner/cypress_runner.js:130975:11)\n    at tryCatcher (http://localhost:44381/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://localhost:44381/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://localhost:44381/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://localhost:44381/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://localhost:44381/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (http://localhost:44381/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://localhost:44381/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://localhost:44381/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://localhost:44381/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://recipes-app-test/./cypress/e2e/02-06.login.cy.js:43:7)\n\nFrom Node.js Internals:\n  Error: connect ECONNREFUSED 127.0.0.1:3000\n      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1494:16)",
+                "diff": null
+              },
+              "uuid": "956925aa-7c61-4547-b129-4c5eb162731b",
+              "parentUUID": "7fe9fd27-295e-41ff-ba6e-7d2336eb671d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "O botão deve estar ativado se o email e a senha forem válidos",
+              "fullTitle": "4 - Desenvolva a tela de maneira que o formulário só seja válido após um email válido e uma senha de mais de 6 caracteres serem preenchidos O botão deve estar ativado se o email e a senha forem válidos",
+              "timedOut": null,
+              "duration": 541,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/');\ncy.get('[data-testid=\"login-submit-btn\"]').should('be.disabled');\ncy.get('[data-testid=\"email-input\"]').type('email@mail.com');\ncy.get('[data-testid=\"password-input\"]').type('1234567');\ncy.get('[data-testid=\"login-submit-btn\"]').should('not.be.disabled');",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttp://localhost:3000/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 127.0.0.1:3000\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttp://localhost:3000/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 127.0.0.1:3000\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n    at <unknown> (http://localhost:44381/__cypress/runner/cypress_runner.js:130976:74)\n    at visitFailedByErr (http://localhost:44381/__cypress/runner/cypress_runner.js:130374:12)\n    at <unknown> (http://localhost:44381/__cypress/runner/cypress_runner.js:130975:11)\n    at tryCatcher (http://localhost:44381/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://localhost:44381/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://localhost:44381/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://localhost:44381/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://localhost:44381/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (http://localhost:44381/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://localhost:44381/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://localhost:44381/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://localhost:44381/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://recipes-app-test/./cypress/e2e/02-06.login.cy.js:54:7)\n\nFrom Node.js Internals:\n  Error: connect ECONNREFUSED 127.0.0.1:3000\n      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1494:16)",
+                "diff": null
+              },
+              "uuid": "3942a002-88c8-41a8-b698-9c5c7bcf9481",
+              "parentUUID": "7fe9fd27-295e-41ff-ba6e-7d2336eb671d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verifica a cobertura de 45% da tela de Login",
+              "fullTitle": "4 - Desenvolva a tela de maneira que o formulário só seja válido após um email válido e uma senha de mais de 6 caracteres serem preenchidos Verifica a cobertura de 45% da tela de Login",
+              "timedOut": null,
+              "duration": 44,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getCoverage().its('Login.functions.pct', {\n  timeout: 0\n}).should('be.gte', 45.00);\ncy.getCoverage().its('Login.branches.pct', {\n  timeout: 0\n}).should('be.gte', 45.00);",
+              "err": {},
+              "uuid": "9e6792a2-60ff-49c5-8d5c-aeefe15d4aa7",
+              "parentUUID": "7fe9fd27-295e-41ff-ba6e-7d2336eb671d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9e6792a2-60ff-49c5-8d5c-aeefe15d4aa7"
+          ],
+          "failures": [
+            "0b9060ec-5d39-41ba-9f7c-744aedfd6e2c",
+            "956925aa-7c61-4547-b129-4c5eb162731b",
+            "3942a002-88c8-41a8-b698-9c5c7bcf9481"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 1665,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "17cb6c83-a2e8-4e07-8b65-4b5b9b3d4347",
+          "title": "5 - Após a submissão do formulário, salve no localStorage o e-mail da pessoa usuária na chave `user`",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Após o login, os dados devem estar salvos no localStorage",
+              "fullTitle": "5 - Após a submissão do formulário, salve no localStorage o e-mail da pessoa usuária na chave `user` Após o login, os dados devem estar salvos no localStorage",
+              "timedOut": null,
+              "duration": 543,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/', {\n  onBeforeLoad(win) {\n    win.localStorage.clear();\n  }\n});\ncy.get('[data-testid=\"login-submit-btn\"]').should('be.disabled');\ncy.get('[data-testid=\"email-input\"]').type('email@mail.com');\ncy.get('[data-testid=\"password-input\"]').type('1234567');\ncy.get('[data-testid=\"login-submit-btn\"]').click();\ncy.window().then(win => {\n  expect(JSON.parse(win.localStorage.getItem('user'))).to.deep.eq({\n    email: 'email@mail.com'\n  });\n  win.localStorage.clear();\n});",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttp://localhost:3000/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 127.0.0.1:3000\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttp://localhost:3000/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 127.0.0.1:3000\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n    at <unknown> (http://localhost:44381/__cypress/runner/cypress_runner.js:130976:74)\n    at visitFailedByErr (http://localhost:44381/__cypress/runner/cypress_runner.js:130374:12)\n    at <unknown> (http://localhost:44381/__cypress/runner/cypress_runner.js:130975:11)\n    at tryCatcher (http://localhost:44381/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://localhost:44381/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://localhost:44381/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://localhost:44381/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://localhost:44381/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (http://localhost:44381/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://localhost:44381/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://localhost:44381/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://localhost:44381/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://recipes-app-test/./cypress/e2e/02-06.login.cy.js:73:7)\n\nFrom Node.js Internals:\n  Error: connect ECONNREFUSED 127.0.0.1:3000\n      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1494:16)",
+                "diff": null
+              },
+              "uuid": "8ba88cdc-e3d3-4e94-894c-9a3b8962f92a",
+              "parentUUID": "17cb6c83-a2e8-4e07-8b65-4b5b9b3d4347",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "8ba88cdc-e3d3-4e94-894c-9a3b8962f92a"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 543,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "e39cf40a-87f6-442f-b600-ecd4c5087586",
+          "title": "6 - Redirecione a pessoa usuária para a tela principal de receitas de comidas após a submissão e validação com sucesso do login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "A rota muda para a tela principal de receitas de comidas",
+              "fullTitle": "6 - Redirecione a pessoa usuária para a tela principal de receitas de comidas após a submissão e validação com sucesso do login A rota muda para a tela principal de receitas de comidas",
+              "timedOut": null,
+              "duration": 545,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/', {\n  onBeforeLoad(win) {\n    win.localStorage.clear();\n  }\n});\ncy.get('[data-testid=\"login-submit-btn\"]').should('be.disabled');\ncy.window().then(win => {\n  expect(win.localStorage.getItem('user')).to.be.null;\n});\ncy.get('[data-testid=\"email-input\"]').type('email@mail.com');\ncy.get('[data-testid=\"password-input\"]').type('1234567');\ncy.get('[data-testid=\"login-submit-btn\"]').click();\ncy.location().should(loc => expect(loc.pathname).to.eq('/meals'));\ncy.window().then(win => {\n  win.localStorage.clear();\n});",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttp://localhost:3000/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 127.0.0.1:3000\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttp://localhost:3000/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 127.0.0.1:3000\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n    at <unknown> (http://localhost:44381/__cypress/runner/cypress_runner.js:130976:74)\n    at visitFailedByErr (http://localhost:44381/__cypress/runner/cypress_runner.js:130374:12)\n    at <unknown> (http://localhost:44381/__cypress/runner/cypress_runner.js:130975:11)\n    at tryCatcher (http://localhost:44381/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://localhost:44381/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://localhost:44381/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://localhost:44381/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://localhost:44381/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (http://localhost:44381/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://localhost:44381/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://localhost:44381/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://localhost:44381/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://recipes-app-test/./cypress/e2e/02-06.login.cy.js:96:7)\n\nFrom Node.js Internals:\n  Error: connect ECONNREFUSED 127.0.0.1:3000\n      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1494:16)",
+                "diff": null
+              },
+              "uuid": "c896c934-4c1e-4182-a395-40d8932dbb7f",
+              "parentUUID": "e39cf40a-87f6-442f-b600-ecd4c5087586",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verifica a cobertura de 90% da tela de Login",
+              "fullTitle": "6 - Redirecione a pessoa usuária para a tela principal de receitas de comidas após a submissão e validação com sucesso do login Verifica a cobertura de 90% da tela de Login",
+              "timedOut": null,
+              "duration": 41,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getCoverage().its('Login.functions.pct', {\n  timeout: 0\n}).should('be.gte', 90.00);\ncy.getCoverage().its('Login.branches.pct', {\n  timeout: 0\n}).should('be.gte', 90.00);",
+              "err": {},
+              "uuid": "79b26795-025c-4953-9274-71a0c50c3b77",
+              "parentUUID": "e39cf40a-87f6-442f-b600-ecd4c5087586",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "79b26795-025c-4953-9274-71a0c50c3b77"
+          ],
+          "failures": [
+            "c896c934-4c1e-4182-a395-40d8932dbb7f"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 586,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,387 @@
+{
+  "stats": {
+    "suites": 7,
+    "tests": 9,
+    "passes": 7,
+    "pending": 0,
+    "failures": 2,
+    "start": "2024-01-23T10:44:10.530Z",
+    "end": "2024-01-23T10:44:21.037Z",
+    "duration": 10507,
+    "testsRegistered": 9,
+    "passPercent": 77.77777777777779,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "cb087ac9-cecc-4932-8534-51dc3003e814",
+      "title": "",
+      "fullFile": "cypress/e2e/56-61.profile.cy.js",
+      "file": "cypress/e2e/56-61.profile.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "30fb539c-dac2-4102-b108-d07fa715bffe",
+          "title": "Profile screen",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "4fd3cb37-504f-45f2-b793-bf88c627a13d",
+              "title": "56 - Implemente os elementos da tela de perfil respeitando os atributos descritos no protótipo",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Todos o data-testid do email e de todos os botões",
+                  "fullTitle": "Profile screen 56 - Implemente os elementos da tela de perfil respeitando os atributos descritos no protótipo Todos o data-testid do email e de todos os botões",
+                  "timedOut": null,
+                  "duration": 494,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('[data-testid=\"profile-email\"]');\ncy.get('[data-testid=\"profile-done-btn\"]');\ncy.get('[data-testid=\"profile-favorite-btn\"]');\ncy.get('[data-testid=\"profile-logout-btn\"]');",
+                  "err": {},
+                  "uuid": "217e7a7a-a191-4b1d-aee9-262b7e409281",
+                  "parentUUID": "4fd3cb37-504f-45f2-b793-bf88c627a13d",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "217e7a7a-a191-4b1d-aee9-262b7e409281"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 494,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "9da20946-363c-4b74-a609-7a5feb6a927a",
+              "title": "57 - Implemente a solução de maneira que o e-mail da pessoa usuária deve estar visível",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "O e-mail armazenado em localStorage está visível",
+                  "fullTitle": "Profile screen 57 - Implemente a solução de maneira que o e-mail da pessoa usuária deve estar visível O e-mail armazenado em localStorage está visível",
+                  "timedOut": null,
+                  "duration": 114,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('[data-testid=\"profile-email\"]').contains('email@mail.com');",
+                  "err": {},
+                  "uuid": "ac703995-fe58-4a8e-a196-c4ffc307dad3",
+                  "parentUUID": "9da20946-363c-4b74-a609-7a5feb6a927a",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "ac703995-fe58-4a8e-a196-c4ffc307dad3"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 114,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "a470eded-d43e-4051-8bfd-85b0475eb504",
+              "title": "58 - Implemente 3 botões: um de nome \"Done Recipes\", um de nome \"Favorite Recipes\" e um de nome \"Logout\"",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "A tela contêm todos os 3 botões",
+                  "fullTitle": "Profile screen 58 - Implemente 3 botões: um de nome \"Done Recipes\", um de nome \"Favorite Recipes\" e um de nome \"Logout\" A tela contêm todos os 3 botões",
+                  "timedOut": null,
+                  "duration": 109,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('[data-testid=\"profile-done-btn\"]').contains('Done Recipes');\ncy.get('[data-testid=\"profile-favorite-btn\"]').contains('Favorite Recipes');\ncy.get('[data-testid=\"profile-logout-btn\"]').contains('Logout');",
+                  "err": {},
+                  "uuid": "905c9ec2-43ed-415f-a2ef-13630e048334",
+                  "parentUUID": "a470eded-d43e-4051-8bfd-85b0475eb504",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "905c9ec2-43ed-415f-a2ef-13630e048334"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 109,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "d7c15700-2c86-4ff3-97d6-437b6c017ca7",
+              "title": "59 - Redirecione a pessoa usuária que, ao clicar no botão de \"Done Recipes\", a rota deve mudar para a tela de receitas feitas",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Redireciona para a rota correta",
+                  "fullTitle": "Profile screen 59 - Redirecione a pessoa usuária que, ao clicar no botão de \"Done Recipes\", a rota deve mudar para a tela de receitas feitas Redireciona para a rota correta",
+                  "timedOut": null,
+                  "duration": 191,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('[data-testid=\"profile-done-btn\"]').click();\ncy.location().should(loc => expect(loc.pathname).to.eq('/done-recipes'));",
+                  "err": {},
+                  "uuid": "8cb28229-9fee-4010-9745-00642253d57e",
+                  "parentUUID": "d7c15700-2c86-4ff3-97d6-437b6c017ca7",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Verifica a cobertura de 45% da tela de Perfil",
+                  "fullTitle": "Profile screen 59 - Redirecione a pessoa usuária que, ao clicar no botão de \"Done Recipes\", a rota deve mudar para a tela de receitas feitas Verifica a cobertura de 45% da tela de Perfil",
+                  "timedOut": null,
+                  "duration": 3360,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.getCoverage().its('Profile.functions.pct', {\n  timeout: 0\n}).should('be.gte', 45.00);\ncy.getCoverage().its('Profile.branches.pct', {\n  timeout: 0\n}).should('be.gte', 45.00);",
+                  "err": {
+                    "message": "CypressError: `cy.task('getCoverage')` failed with the following error:\n\n> Command failed: npm run cy-coverage ./src\n⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯\n\n FAIL  src/tests/App.test.tsx > Farewell, front-end\nTestingLibraryElementError: Unable to find an element with the text: /TRYBE/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.\n\nIgnored nodes: comments, script, style\n<body>\n  <div>\n    <div>\n      <form>\n        <label\n          for=\"email-input\"\n        >\n          Email:\n          <input\n            data-testid=\"email-input\"\n            type=\"email\"\n          />\n        </label>\n        <label\n          for=\"password-input\"\n        >\n          Senha:\n          <input\n            data-testid=\"password-input\"\n            type=\"password\"\n          />\n        </label>\n        <button\n          data-testid=\"login-submit-btn\"\n        >\n          Enter\n        </button>\n      </form>\n    </div>\n  </div>\n</body>\n ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19\n ❯ node_modules/@testing-library/dom/dist/query-helpers.js:76:38\n ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17\n ❯ getByText node_modules/@testing-library/dom/dist/query-helpers.js:95:19\n ❯ src/tests/App.test.tsx:8:30\n      6|   // Este arquivo pode ser modificado ou deletado sem problemas\n      7|   render(<App />);\n      8|   const linkElement = screen.getByText(/TRYBE/i);\n       |                              ^\n      9|   expect(linkElement).toBeInTheDocument();\n     10| });\n\n⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯\n\nhttps://on.cypress.io/api/task",
+                    "estack": "CypressError: `cy.task('getCoverage')` failed with the following error:\n\n> Command failed: npm run cy-coverage ./src\n⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯\n\n FAIL  src/tests/App.test.tsx > Farewell, front-end\nTestingLibraryElementError: Unable to find an element with the text: /TRYBE/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.\n\nIgnored nodes: comments, script, style\n<body>\n  <div>\n    <div>\n      <form>\n        <label\n          for=\"email-input\"\n        >\n          Email:\n          <input\n            data-testid=\"email-input\"\n            type=\"email\"\n          />\n        </label>\n        <label\n          for=\"password-input\"\n        >\n          Senha:\n          <input\n            data-testid=\"password-input\"\n            type=\"password\"\n          />\n        </label>\n        <button\n          data-testid=\"login-submit-btn\"\n        >\n          Enter\n        </button>\n      </form>\n    </div>\n  </div>\n</body>\n ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19\n ❯ node_modules/@testing-library/dom/dist/query-helpers.js:76:38\n ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17\n ❯ getByText node_modules/@testing-library/dom/dist/query-helpers.js:95:19\n ❯ src/tests/App.test.tsx:8:30\n      6|   // Este arquivo pode ser modificado ou deletado sem problemas\n      7|   render(<App />);\n      8|   const linkElement = screen.getByText(/TRYBE/i);\n       |                              ^\n      9|   expect(linkElement).toBeInTheDocument();\n     10| });\n\n⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯\n\nhttps://on.cypress.io/api/task\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135281:70)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://recipes-app-test/./cypress/support/commands.js:26:45)\n\nFrom Node.js Internals:\n  Error: Command failed: npm run cy-coverage ./src\n  ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯\n  \n   FAIL  src/tests/App.test.tsx > Farewell, front-end\n  TestingLibraryElementError: Unable to find an element with the text: /TRYBE/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.\n  \n  Ignored nodes: comments, script, style\n  <body>\n    <div>\n      <div>\n        <form>\n          <label\n            for=\"email-input\"\n          >\n            Email:\n            <input\n              data-testid=\"email-input\"\n              type=\"email\"\n            />\n          </label>\n          <label\n            for=\"password-input\"\n          >\n            Senha:\n            <input\n              data-testid=\"password-input\"\n              type=\"password\"\n            />\n          </label>\n          <button\n            data-testid=\"login-submit-btn\"\n          >\n            Enter\n          </button>\n        </form>\n      </div>\n    </div>\n  </body>\n   ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19\n   ❯ node_modules/@testing-library/dom/dist/query-helpers.js:76:38\n   ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17\n   ❯ getByText node_modules/@testing-library/dom/dist/query-helpers.js:95:19\n   ❯ src/tests/App.test.tsx:8:30\n        6|   // Este arquivo pode ser modificado ou deletado sem problemas\n        7|   render(<App />);\n        8|   const linkElement = screen.getByText(/TRYBE/i);\n         |                              ^\n        9|   expect(linkElement).toBeInTheDocument();\n       10| });\n  \n  ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯\n  \n  \n      at ChildProcess.exithandler (node:child_process:419:12)\n      at ChildProcess.emit (node:events:514:28)\n      at ChildProcess.emit (node:domain:489:12)\n      at maybeClose (node:internal/child_process:1091:16)\n      at Process.ChildProcess._handle.onexit (node:internal/child_process:302:5)",
+                    "diff": null
+                  },
+                  "uuid": "9efa2ccb-7827-4670-a7d2-864b63c9d15d",
+                  "parentUUID": "d7c15700-2c86-4ff3-97d6-437b6c017ca7",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "8cb28229-9fee-4010-9745-00642253d57e"
+              ],
+              "failures": [
+                "9efa2ccb-7827-4670-a7d2-864b63c9d15d"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 3551,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "73ae21e2-8cfa-4828-ac6f-23e2843cb4ee",
+              "title": "60 - Redirecione a pessoa usuária que, ao clicar no botão de \"Favorite Recipes\", a rota deve mudar para a tela de receitas favoritas",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Redireciona para a rota correta",
+                  "fullTitle": "Profile screen 60 - Redirecione a pessoa usuária que, ao clicar no botão de \"Favorite Recipes\", a rota deve mudar para a tela de receitas favoritas Redireciona para a rota correta",
+                  "timedOut": null,
+                  "duration": 182,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('[data-testid=\"profile-favorite-btn\"]').click();\ncy.location().should(loc => expect(loc.pathname).to.eq('/favorite-recipes'));",
+                  "err": {},
+                  "uuid": "9bf03dbe-8c2a-4e3e-8e4d-bc561e438d53",
+                  "parentUUID": "73ae21e2-8cfa-4828-ac6f-23e2843cb4ee",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "9bf03dbe-8c2a-4e3e-8e4d-bc561e438d53"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 182,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "c0ce76db-220c-4087-8091-791efe672a6c",
+              "title": "61 - Redirecione a pessoa usuária que ao clicar no botão de \"Logout\", o `localStorage` deve ser limpo e a rota deve mudar para a tela de login",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Limpa todas as chaves da localStorage",
+                  "fullTitle": "Profile screen 61 - Redirecione a pessoa usuária que ao clicar no botão de \"Logout\", o `localStorage` deve ser limpo e a rota deve mudar para a tela de login Limpa todas as chaves da localStorage",
+                  "timedOut": null,
+                  "duration": 192,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.window().then(win => {\n  expect(JSON.parse(win.localStorage.getItem('user'))).to.deep.eq({\n    email: 'email@mail.com'\n  });\n  expect(win.localStorage.getItem('doneRecipes')).to.eq('[]');\n  expect(win.localStorage.getItem('favoriteRecipes')).to.eq('[]');\n  expect(win.localStorage.getItem('inProgressRecipes')).to.eq('{}');\n});\ncy.get('[data-testid=\"profile-logout-btn\"]').click();\ncy.window().then(win => {\n  expect(win.localStorage.getItem('email')).to.be.null;\n  expect(win.localStorage.getItem('doneRecipes')).to.be.null;\n  expect(win.localStorage.getItem('favoriteRecipes')).to.be.null;\n  expect(win.localStorage.getItem('inProgressRecipes')).to.be.null;\n});",
+                  "err": {},
+                  "uuid": "7209c600-940a-4a50-92ce-3e988ea67114",
+                  "parentUUID": "c0ce76db-220c-4087-8091-791efe672a6c",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "A rota muda para a tela de login",
+                  "fullTitle": "Profile screen 61 - Redirecione a pessoa usuária que ao clicar no botão de \"Logout\", o `localStorage` deve ser limpo e a rota deve mudar para a tela de login A rota muda para a tela de login",
+                  "timedOut": null,
+                  "duration": 173,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('[data-testid=\"profile-logout-btn\"]').click();\ncy.location().should(loc => expect(loc.pathname).to.eq('/'));",
+                  "err": {},
+                  "uuid": "970b35f5-17b9-4845-96fd-cd6d37294878",
+                  "parentUUID": "c0ce76db-220c-4087-8091-791efe672a6c",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Verifica a cobertura de 90% da tela de Perfil",
+                  "fullTitle": "Profile screen 61 - Redirecione a pessoa usuária que ao clicar no botão de \"Logout\", o `localStorage` deve ser limpo e a rota deve mudar para a tela de login Verifica a cobertura de 90% da tela de Perfil",
+                  "timedOut": null,
+                  "duration": 3243,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.getCoverage().its('Profile.functions.pct', {\n  timeout: 0\n}).should('be.gte', 90.00);\ncy.getCoverage().its('Profile.branches.pct', {\n  timeout: 0\n}).should('be.gte', 90.00);",
+                  "err": {
+                    "message": "CypressError: `cy.task('getCoverage')` failed with the following error:\n\n> Command failed: npm run cy-coverage ./src\n⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯\n\n FAIL  src/tests/App.test.tsx > Farewell, front-end\nTestingLibraryElementError: Unable to find an element with the text: /TRYBE/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.\n\nIgnored nodes: comments, script, style\n<body>\n  <div>\n    <div>\n      <form>\n        <label\n          for=\"email-input\"\n        >\n          Email:\n          <input\n            data-testid=\"email-input\"\n            type=\"email\"\n          />\n        </label>\n        <label\n          for=\"password-input\"\n        >\n          Senha:\n          <input\n            data-testid=\"password-input\"\n            type=\"password\"\n          />\n        </label>\n        <button\n          data-testid=\"login-submit-btn\"\n        >\n          Enter\n        </button>\n      </form>\n    </div>\n  </div>\n</body>\n ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19\n ❯ node_modules/@testing-library/dom/dist/query-helpers.js:76:38\n ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17\n ❯ getByText node_modules/@testing-library/dom/dist/query-helpers.js:95:19\n ❯ src/tests/App.test.tsx:8:30\n      6|   // Este arquivo pode ser modificado ou deletado sem problemas\n      7|   render(<App />);\n      8|   const linkElement = screen.getByText(/TRYBE/i);\n       |                              ^\n      9|   expect(linkElement).toBeInTheDocument();\n     10| });\n\n⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯\n\nhttps://on.cypress.io/api/task",
+                    "estack": "CypressError: `cy.task('getCoverage')` failed with the following error:\n\n> Command failed: npm run cy-coverage ./src\n⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯\n\n FAIL  src/tests/App.test.tsx > Farewell, front-end\nTestingLibraryElementError: Unable to find an element with the text: /TRYBE/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.\n\nIgnored nodes: comments, script, style\n<body>\n  <div>\n    <div>\n      <form>\n        <label\n          for=\"email-input\"\n        >\n          Email:\n          <input\n            data-testid=\"email-input\"\n            type=\"email\"\n          />\n        </label>\n        <label\n          for=\"password-input\"\n        >\n          Senha:\n          <input\n            data-testid=\"password-input\"\n            type=\"password\"\n          />\n        </label>\n        <button\n          data-testid=\"login-submit-btn\"\n        >\n          Enter\n        </button>\n      </form>\n    </div>\n  </div>\n</body>\n ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19\n ❯ node_modules/@testing-library/dom/dist/query-helpers.js:76:38\n ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17\n ❯ getByText node_modules/@testing-library/dom/dist/query-helpers.js:95:19\n ❯ src/tests/App.test.tsx:8:30\n      6|   // Este arquivo pode ser modificado ou deletado sem problemas\n      7|   render(<App />);\n      8|   const linkElement = screen.getByText(/TRYBE/i);\n       |                              ^\n      9|   expect(linkElement).toBeInTheDocument();\n     10| });\n\n⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯\n\nhttps://on.cypress.io/api/task\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135281:70)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://recipes-app-test/./cypress/support/commands.js:26:45)\n\nFrom Node.js Internals:\n  Error: Command failed: npm run cy-coverage ./src\n  ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯\n  \n   FAIL  src/tests/App.test.tsx > Farewell, front-end\n  TestingLibraryElementError: Unable to find an element with the text: /TRYBE/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.\n  \n  Ignored nodes: comments, script, style\n  <body>\n    <div>\n      <div>\n        <form>\n          <label\n            for=\"email-input\"\n          >\n            Email:\n            <input\n              data-testid=\"email-input\"\n              type=\"email\"\n            />\n          </label>\n          <label\n            for=\"password-input\"\n          >\n            Senha:\n            <input\n              data-testid=\"password-input\"\n              type=\"password\"\n            />\n          </label>\n          <button\n            data-testid=\"login-submit-btn\"\n          >\n            Enter\n          </button>\n        </form>\n      </div>\n    </div>\n  </body>\n   ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19\n   ❯ node_modules/@testing-library/dom/dist/query-helpers.js:76:38\n   ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17\n   ❯ getByText node_modules/@testing-library/dom/dist/query-helpers.js:95:19\n   ❯ src/tests/App.test.tsx:8:30\n        6|   // Este arquivo pode ser modificado ou deletado sem problemas\n        7|   render(<App />);\n        8|   const linkElement = screen.getByText(/TRYBE/i);\n         |                              ^\n        9|   expect(linkElement).toBeInTheDocument();\n       10| });\n  \n  ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯\n  \n  \n      at ChildProcess.exithandler (node:child_process:419:12)\n      at ChildProcess.emit (node:events:514:28)\n      at ChildProcess.emit (node:domain:489:12)\n      at maybeClose (node:internal/child_process:1091:16)\n      at Process.ChildProcess._handle.onexit (node:internal/child_process:302:5)",
+                    "diff": null
+                  },
+                  "uuid": "71beb1e4-71b7-4067-b6bf-45d6ac8d7396",
+                  "parentUUID": "c0ce76db-220c-4087-8091-791efe672a6c",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "7209c600-940a-4a50-92ce-3e988ea67114",
+                "970b35f5-17b9-4845-96fd-cd6d37294878"
+              ],
+              "failures": [
+                "71beb1e4-71b7-4067-b6bf-45d6ac8d7396"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 3608,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

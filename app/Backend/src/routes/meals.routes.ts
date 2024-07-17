@@ -1,10 +1,11 @@
-import { Request, Response, Router } from "express";
-import MealController from '../controllers/MealsController';
+import { Router, Request, Response } from 'express';
+import MealsController from '../controllers/MealsController';
 
 const router = Router();
+const mealsController = new MealsController();
 
-const mealsController = new MealController();
-
-router.get('/meals', (req: Request, res: Response) => mealsController.getMeals(req, res));
+router.get('/meals', (req: Request, res: Response) => mealsController.getAllMeals(req, res));
+router.get('/meals/:id', (req, res) => mealsController.getMealById(req, res));
+router.get('/meals/:name', (req, res) => mealsController.getMealById(req, res));
 
 export default router;

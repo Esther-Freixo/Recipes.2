@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { requestData } from '../../services/request';
 
 type RecipeDetails = {
   id: string;
@@ -36,23 +37,19 @@ function RecipeDetailsMeals({ id } : RecipeDetails) {
   };
 
   useEffect(() => {
-    const refresh = () => {
-      const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
+    const refresh = async () => {
+      try {
+        const dataFetch = await requestData(`/meals/${id}`);
+        setData(dataFetch.meals);
 
-      return fetch(url)
-        .then((response) => response.json())
-        .then((dataFetch) => {
-          setData(dataFetch.meals);
+        const ingredients = getIngredients(dataFetch.meals[0]);
+        const measures = getMeasures(dataFetch.meals[0]);
 
-          const ingredients = getIngredients(dataFetch.meals[0]);
-          const measures = getMeasures(dataFetch.meals[0]);
-
-          setIngredientsList(ingredients);
-          setMeasuresList(measures);
-        })
-        .catch((error) => {
-          console.error('Fetch failed: ', error);
-        });
+        setIngredientsList(ingredients);
+        setMeasuresList(measures);
+      } catch (error) {
+        console.error('Fetch failed: ', error);
+      }
     };
 
     const recommended = () => {

@@ -8,16 +8,16 @@ function FiltersMeals() {
   const [loading, setLoading] = useState(true);
 
   const refresh = useCallback(() => {
-    fetch('https://www.themealdb.com/api/json/v1/1/list.php?c=list')
+    fetch('http://localhost:3001/api/meals')
       .then((response) => response.json())
       .then((dataFetch) => {
-        setDataMeals(dataFetch.meals);
+        setDataMeals(dataFetch);
         setLoading(false);
       });
   }, []);
 
   useEffect(() => {
-    refresh();
+    refresh();  
   }, [refresh]);
 
   const dataLen5: [] = [];

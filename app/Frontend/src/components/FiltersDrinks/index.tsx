@@ -10,7 +10,7 @@ function FiltersDrinks() {
   const [loading, setLoading] = useState(true);
 
   const refresh = useCallback(() => {
-    fetch('https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list')
+    fetch('http://localhost:3001/drinks')
       .then((response) => response.json())
       .then((dataFetch) => {
         const processedDrinks = dataFetch.drinks.map((drink: any) => {

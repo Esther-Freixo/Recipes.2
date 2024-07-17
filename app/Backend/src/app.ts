@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import 'express-async-errors';
-import mealRoutes from './routes/meals.routes';
+import router from './routes';
 
 class App {
   public app: express.Express;
@@ -12,9 +12,6 @@ class App {
     this.config();
 
     this.routes();
-
-    // Não remover essa rota
-    this.app.get('/', (req, res) => res.json({ ok: true }));
 
     // Não remova esse middleware de erro, mas fique a vontade para customizá-lo
     // Mantenha ele sempre como o último middleware a ser chamado
@@ -35,7 +32,7 @@ class App {
   }
 
   private routes(): void {
-    this.app.use('/api', mealRoutes);
+    this.app.use('/', router);
   }
 
   private errorMiddleware(err: any, req: express.Request, res: express.Response, next: express.NextFunction): void {

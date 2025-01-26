@@ -1,6 +1,5 @@
 import { useCallback, useContext, useEffect, useState } from 'react';
 import AppContext from '../../context/AppContext';
-import { requestData } from '../../services/request'
 
 function FiltersMeals() {
   const {
@@ -8,15 +7,21 @@ function FiltersMeals() {
   const [dataMeals, setDataMeals] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const refresh = useCallback(async () => {
-    try {
-      const dataFetch = await requestData('/meals');
-      setDataMeals(dataFetch.meals || []);
-      setLoading(false);
-    } catch (error) {
-      console.error('Failed to fetch data:', error);
-      setLoading(false);
-    }
+
+  const refresh = useCallback(() => {
+    fetch('http://localhost:3001/meals')
+      .then((response) => response.json())
+      .then((dataFetch) => {
+        const processedMeals = dataFetch.meals.map((meal: any) => {
+          const newStrCategory = meal.strCategory === 'Other / Unknown' ? meal.strCategory.replace(/\s/g, '') : meal.strCategory;
+          return {
+            ...meal,
+            strCategory: newStrCategory,
+          };
+        });
+        setDataMeals(processedMeals);
+        setLoading(false);
+      });
   }, []);
 
   useEffect(() => {

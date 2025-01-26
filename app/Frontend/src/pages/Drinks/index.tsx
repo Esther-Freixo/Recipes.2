@@ -15,7 +15,7 @@ function Drinks() {
   const refresh = useCallback(() => {
     let url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
 
-    if (stateFilterByCategoryDrinks === 'All') url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
+    if (stateFilterByCategoryDrinks === 'All') url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=1';
 
     if (stateFilterByCategoryDrinks === 'Ordinary Drink') url = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary Drink';
 
@@ -33,7 +33,6 @@ function Drinks() {
         setDataDrink(dataFetch.drinks);
         setLoading(false);
       });
-    // fetch da url2 realizado para trazer as recomendações de meals pedidas no requisito 25
   }, [stateFilterByCategoryDrinks]);
 
   useEffect(() => {

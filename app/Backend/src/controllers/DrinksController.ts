@@ -10,13 +10,13 @@ export default class drinksController {
     return res.status(mapStatusHTTP(serviceResponse.status)).json(serviceResponse.data);
   }
 
-  public async getMealById(req: Request, res: Response): Promise<Response> {
+  public async getDrinkById(req: Request, res: Response): Promise<Response> {
     const { id } = req.params;
     const serviceResponse = await this.drinksService.findById(id);
     return res.status(mapStatusHTTP(serviceResponse.status)).json(serviceResponse.data);
   }
 
-  public async getMealByName(req: Request, res: Response): Promise<Response> {
+  public async getDrinkByName(req: Request, res: Response): Promise<Response> {
     const { name } = req.params;
     const serviceResponse = await this.drinksService.findByName(name);
     return res.status(mapStatusHTTP(serviceResponse.status)).json(serviceResponse.data);

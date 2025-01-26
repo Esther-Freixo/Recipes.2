@@ -11,12 +11,22 @@ export default class drinksService {
   }
 
   public async findById(id: string): Promise<ServiceResponse<IDrinks[]>> {
-    const meal = await this.drinksModel.findById(id);
-    return { status: 'SUCCESSFUL', data: meal };
+    try {
+      const drink = await this.drinksModel.findById(id);
+      return { status: 'SUCCESSFUL', data: drink };
+    } catch (error) {
+      if (error instanceof Error) {
+        console.error('Error in Service:', error.message);
+      } else {
+        console.error('Unknown error in Service:', error);
+      }
+      return { status: 'NOT_FOUND', data: { message: 'Drink not found' } };
+    }
   }
+  
 
   public async findByName(name: string): Promise<ServiceResponse<IDrinks[]>> {
-    const meal = await this.drinksModel.findByName(name);
-    return { status: 'SUCCESSFUL', data: meal };
+    const drink = await this.drinksModel.findByName(name);
+    return { status: 'SUCCESSFUL', data: drink };
   }
 }

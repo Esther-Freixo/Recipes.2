@@ -37,8 +37,7 @@ function RecipeDetailsDrinks({ id } : RecipeDetails) {
 
   useEffect(() => {
     const refresh = () => {
-      const url = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`;
-
+      const url = `http://localhost:3001/drinks/${id}`;
       return fetch(url)
         .then((response) => response.json())
         .then((dataFetch) => {
@@ -55,7 +54,7 @@ function RecipeDetailsDrinks({ id } : RecipeDetails) {
         });
     };
     const recomended = () => {
-      const url = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
+      const url = 'http://localhost:3001/meals';
 
       return fetch(url)
         .then((response) => response.json())

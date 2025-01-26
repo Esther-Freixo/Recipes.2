@@ -5,7 +5,7 @@ const router = Router();
 const drinksController = new DrinksController();
 
 router.get('/', (req: Request, res: Response) => drinksController.getAlldrinks(req, res));
-router.get('/:id', (req, res) => drinksController.getMealById(req, res));
-// router.get('/drinks/:name', (req, res) => drinksController.getMealByName(req, res));
+router.get('/:id', (req: Request, res: Response) => drinksController.getDrinkById(req, res));
+router.get('/:name', (req: Request, res: Response) => drinksController.getDrinkByName(req, res));
 
 export default router;

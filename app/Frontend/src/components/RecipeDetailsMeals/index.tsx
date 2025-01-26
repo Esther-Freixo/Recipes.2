@@ -39,21 +39,26 @@ function RecipeDetailsMeals({ id } : RecipeDetails) {
   useEffect(() => {
     const refresh = async () => {
       try {
-        const dataFetch = await requestData(`/meals/${id}`);
-        setData(dataFetch.meals);
+        const url = 'http://localhost:3001/meals';
 
-        const ingredients = getIngredients(dataFetch.meals[0]);
-        const measures = getMeasures(dataFetch.meals[0]);
-
-        setIngredientsList(ingredients);
-        setMeasuresList(measures);
+        fetch(url)
+          .then((response) => response.json())
+          .then((dataFetch) => {          
+            setData(dataFetch.meals);
+            
+            const ingredients = getIngredients(dataFetch.meals[0]);
+            const measures = getMeasures(dataFetch.meals[0]);
+            
+            setIngredientsList(ingredients);
+            setMeasuresList(measures);
+          })
       } catch (error) {
         console.error('Fetch failed: ', error);
       }
     };
 
     const recommended = () => {
-      const url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
+      const url = 'http://localhost:3001/drinks';
 
       return fetch(url)
         .then((response) => response.json())

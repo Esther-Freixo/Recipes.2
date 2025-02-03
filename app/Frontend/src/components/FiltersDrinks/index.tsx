@@ -1,45 +1,51 @@
 import { useCallback, useContext, useEffect, useState } from 'react';
 import AppContext from '../../context/AppContext';
 
+interface DrinkCategory {
+  strCategory: string;
+}
+
 function FiltersDrinks() {
-  const {
-    setStateFilterByCategoryDrinks,
-    stateFilterByCategoryDrinks } = useContext(AppContext);
-
-  const [dataDrink, setDataDrink] = useState([]);
+  const { setStateFilterByCategoryDrinks, stateFilterByCategoryDrinks } = useContext(AppContext);
+  const [dataDrink, setDataDrink] = useState<DrinkCategory[]>([]);
   const [loading, setLoading] = useState(true);
+  const apiUrl = import.meta.env.VITE_API_BASE_URL;
 
+  // Fetch drink categories
   const refresh = useCallback(() => {
-    fetch('http://localhost:3001/drinks')
-      .then((response) => response.json())
+    setLoading(true);
+    fetch(`${apiUrl}/drinks`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Failed to fetch drinks: ${response.statusText}`);
+        }
+        return response.json();
+      })
       .then((dataFetch) => {
-        const processedDrinks = dataFetch.drinks.map((drink: any) => {
-          const newStrCategory = drink.strCategory === 'Other / Unknown' ? drink.strCategory.replace(/\s/g, '') : drink.strCategory;
-          return {
-            ...drink,
-            strCategory: newStrCategory,
-          };
+        const processedDrinks = dataFetch.map((drink: DrinkCategory) => {
+          const newStrCategory =
+            drink.strCategory === 'Other / Unknown'
+              ? drink.strCategory.replace(/\s/g, '')
+              : drink.strCategory;
+          return { ...drink, strCategory: newStrCategory };
         });
         setDataDrink(processedDrinks);
-        setLoading(false);
-      });
-  }, []);
+      })
+      .catch((error) => {
+        console.error('Error fetching drinks:', error);
+      })
+      .finally(() => setLoading(false));
+  }, [apiUrl]);
 
   useEffect(() => {
     refresh();
   }, [refresh]);
 
-  const dataLen5: [] = [];
-
-  for (let index = 0; index < 5; index += 1) {
-    dataLen5.push(dataDrink[index]);
-  }
+  const dataLen5 = dataDrink.slice(0, 5); // Safely limit to 5 categories
 
   const handleClick = (category: string) => {
-    if (stateFilterByCategoryDrinks === 'All' && category === 'All') return;
-
-    if (category === stateFilterByCategoryDrinks) {
-      setStateFilterByCategoryDrinks('All');
+    if (stateFilterByCategoryDrinks === category) {
+      setStateFilterByCategoryDrinks('All'); // Reset to "All" if the same category is clicked
     } else {
       setStateFilterByCategoryDrinks(category);
     }
@@ -50,24 +56,22 @@ function FiltersDrinks() {
   return (
     <div>
       <button
-        onClick={ () => handleClick('All') }
+        onClick={() => handleClick('All')}
         data-testid="All-category-filter"
+        className={stateFilterByCategoryDrinks === 'All' ? 'active' : ''}
       >
         All
       </button>
-      {
-       dataLen5.map((drink :any, index) => (
-         <button
-           data-testid={ `${drink.strCategory}-category-filter` }
-           key={ index }
-           onClick={ () => {
-             handleClick(drink.strCategory);
-           } }
-         >
-           { drink.strCategory }
-         </button>
-       ))
-      }
+      {dataLen5.map((drink, index) => (
+        <button
+          data-testid={`${drink.strCategory}-category-filter`}
+          key={index}
+          onClick={() => handleClick(drink.strCategory)}
+          className={stateFilterByCategoryDrinks === drink.strCategory ? 'active' : ''}
+        >
+          {drink.strCategory}
+        </button>
+      ))}
     </div>
   );
 }

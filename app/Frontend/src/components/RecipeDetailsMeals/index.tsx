@@ -5,114 +5,105 @@ type RecipeDetails = {
   id: string;
 };
 
-function RecipeDetailsMeals({ id } : RecipeDetails) {
-  const [data, setData] = useState([]);
+function RecipeDetailsMeals({ id }: RecipeDetails) {
+  const [data, setData] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [ingredientsList, setIngredientsList] = useState<string[]>([]);
   const [measuresList, setMeasuresList] = useState<string[]>([]);
-  const [recomendedOfMeals, setRecomendedOfMeals] = useState([]);
+  const [recommendedDrinks, setRecommendedDrinks] = useState<any[]>([]);
+  const apiUrl = import.meta.env.VITE_API_BASE_URL;
 
-  const getIngredients = (itemDetails: any) => {
-    const keys = Object.keys(itemDetails);
+  const getIngredients = (itemDetails: any) =>
+    Object.keys(itemDetails)
+      .filter(
+        (key) =>
+          key.includes('strIngredient') &&
+          itemDetails[key] !== '' &&
+          itemDetails[key] !== null
+      )
+      .map((key) => itemDetails[key]);
 
-    const ingredientsListOfObject = keys
-      .filter((key) => key
-        .includes('strIngredient')
-        && itemDetails[key] !== '' && itemDetails[key] !== null);
-
-    const ingredientsValues = ingredientsListOfObject.map((key) => itemDetails[key]);
-    return ingredientsValues;
-  };
-
-  const getMeasures = (itemDetails: any) => {
-    const keys = Object.keys(itemDetails);
-
-    const measuresListOfObject = keys
-      .filter((key) => key
-        .includes('strMeasure')
-        && itemDetails[key] !== '' && itemDetails[key] !== null);
-
-    const measuresValues = measuresListOfObject.map((key) => itemDetails[key]);
-    return measuresValues;
-  };
+  const getMeasures = (itemDetails: any) =>
+    Object.keys(itemDetails)
+      .filter(
+        (key) =>
+          key.includes('strMeasure') &&
+          itemDetails[key] !== '' &&
+          itemDetails[key] !== null
+      )
+      .map((key) => itemDetails[key]);
 
   useEffect(() => {
-    const refresh = async () => {
+    const fetchMealDetails = async () => {
       try {
-        const url = 'http://localhost:3001/meals';
+        const dataFetch = await requestData(`meals/${id}`);
+        setData(dataFetch);
 
-        fetch(url)
-          .then((response) => response.json())
-          .then((dataFetch) => {          
-            setData(dataFetch.meals);
-            
-            const ingredients = getIngredients(dataFetch.meals[0]);
-            const measures = getMeasures(dataFetch.meals[0]);
-            
-            setIngredientsList(ingredients);
-            setMeasuresList(measures);
-          })
+        const ingredients = getIngredients(dataFetch[0]);
+        const measures = getMeasures(dataFetch[0]);
+
+        setIngredientsList(ingredients);
+        setMeasuresList(measures);
       } catch (error) {
-        console.error('Fetch failed: ', error);
+        console.error('Error fetching meal details:', error);
       }
     };
 
-    const recommended = () => {
-      const url = 'http://localhost:3001/drinks';
-
-      return fetch(url)
-        .then((response) => response.json())
-        .then((dataFetch) => {
-          console.log(dataFetch.drinks);
-          setRecomendedOfMeals(dataFetch.drinks);
-        })
-        .catch((error) => {
-          console.error('Fetch failed: ', error);
-        });
+    const fetchRecommendedDrinks = async () => {
+      try {
+        const dataFetch = await requestData('drinks');
+        setRecommendedDrinks(dataFetch);
+      } catch (error) {
+        console.error('Error fetching recommended drinks:', error);
+      }
     };
 
-    Promise.all([refresh(), recommended()]).then(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      await Promise.all([fetchMealDetails(), fetchRecommendedDrinks()]);
       setLoading(false);
-    });
+    };
+
+    fetchData();
   }, [id]);
-
-  // somente para passar no teste, são os meals recomendados para drinks que irão necessitar nos proximos exercicios
-
-  console.log(recomendedOfMeals);
 
   if (loading) return <div>Loading...</div>;
 
+  if (!data || data.length === 0) {
+    return <div>No meal details found.</div>;
+  }
+
   return (
     <div>
-      {data.map((item: any) => (
-        <div key={ item.idMeal }>
+      {data.map((item) => (
+        <div key={item.idMeal}>
           <img
-            src={ item.strMealThumb }
-            alt={ item.strMeal }
+            src={item.strMealThumb}
+            alt={item.strMeal}
             data-testid="recipe-photo"
           />
           <h2 data-testid="recipe-title">{item.strMeal}</h2>
-          <p data-testid="recipe-category">{ item.strCategory }</p>
+          <p data-testid="recipe-category">{item.strCategory}</p>
           <ul>
-            {
-              ingredientsList.map((ingredient, index) => (
-                <li
-                  key={ ingredient }
-                  data-testid={ `${index}-ingredient-name-and-measure` }
-                >
-                  {`${ingredient} - ${measuresList[index]}`}
-                </li>
-              ))
-            }
+            {ingredientsList.map((ingredient, index) => (
+              <li
+                key={ingredient}
+                data-testid={`${index}-ingredient-name-and-measure`}
+              >
+                {`${ingredient} - ${measuresList[index] || 'N/A'}`}
+              </li>
+            ))}
           </ul>
           <p data-testid="instructions">{item.strInstructions}</p>
-          <iframe
-            data-testid="video"
-            src={ item.strYoutube.replace('watch?v=', 'embed/') }
-            title="video"
-            width="320"
-            height="240"
-          />
+          {item.strYoutube && (
+            <iframe
+              data-testid="video"
+              src={item.strYoutube.replace('watch?v=', 'embed/')}
+              title="video"
+              width="320"
+              height="240"
+            />
+          )}
         </div>
       ))}
     </div>

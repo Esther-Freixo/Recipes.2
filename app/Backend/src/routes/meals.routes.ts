@@ -6,6 +6,6 @@ const mealsController = new MealsController();
 
 router.get('/', (req: Request, res: Response) => mealsController.getAllMeals(req, res));
 router.get('/:id', (req, res) => mealsController.getMealById(req, res));
-// router.get('/meals/:name', (req, res) => mealsController.getMealByName(req, res));
+router.get('/name/:name', (req, res) => mealsController.getMealByName(req, res));
 
 export default router;

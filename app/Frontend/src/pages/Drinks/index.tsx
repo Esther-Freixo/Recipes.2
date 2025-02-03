@@ -4,73 +4,100 @@ import Layout from '../../components/Layout';
 import Recipes from '../../components/Recipes';
 import Filters from '../../components/Filters.tsx';
 import AppContext from '../../context/AppContext';
+import styles from  './drinks.module.css' 
+import HeroSection from '../../components/HeroSection';
+import drinksImage from '../../images/drinksHeroImg.webp'
+
+interface Drink {
+  strAlcoholic: string | undefined;
+  strCategory: string;
+  idDrink: string;
+  strDrink: string;
+  strDrinkThumb: string;
+}
 
 function Drinks() {
-  const {
-    stateFilterByCategoryDrinks } = useContext(AppContext);
+  const { stateFilterByCategoryDrinks } = useContext(AppContext);
 
-  const [dataDrink, setDataDrink] = useState([]);
+  const [dataDrink, setDataDrink] = useState<Drink[]>([]);
   const [loading, setLoading] = useState(true);
+  const baseUrl = import.meta.env.VITE_API_BASE_URL;
 
+  // Fetch drinks based on the selected category
   const refresh = useCallback(() => {
-    let url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
-
-    if (stateFilterByCategoryDrinks === 'All') url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=1';
-
-    if (stateFilterByCategoryDrinks === 'Ordinary Drink') url = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary Drink';
-
-    if (stateFilterByCategoryDrinks === 'Cocktail') url = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail';
-
-    if (stateFilterByCategoryDrinks === 'Shake') url = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Shake';
-
-    if (stateFilterByCategoryDrinks === 'Other/Unknown') url = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Other/Unknown';
-
-    if (stateFilterByCategoryDrinks === 'Cocoa') url = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocoa';
-
+    let url = `${baseUrl}/drinks`;
+    if (stateFilterByCategoryDrinks && stateFilterByCategoryDrinks !== 'All') {
+      url = `${url}/category/${stateFilterByCategoryDrinks.replace(/\s/g, '_')}`;
+    }
+  
+    setLoading(true);
     fetch(url)
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Failed to fetch data from backend: ${response.statusText}`);
+        }
+        return response.json();
+      })
       .then((dataFetch) => {
-        setDataDrink(dataFetch.drinks);
+        console.log('API Response:', dataFetch); 
+        if (dataFetch && dataFetch) {
+          setDataDrink(dataFetch);
+        } else {
+          setDataDrink([]);
+        }
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error('Error fetching drinks:', error);
+        setDataDrink([]); // Clear data on error
         setLoading(false);
       });
-  }, [stateFilterByCategoryDrinks]);
+  }, [stateFilterByCategoryDrinks, baseUrl]);
+  
 
+  // Call refresh when the filter changes
   useEffect(() => {
     refresh();
   }, [refresh]);
 
-  const dataLen: [] = [];
-
-  if (dataDrink.length >= 12) {
-    for (let index = 0; index < 12; index += 1) {
-      dataLen.push(dataDrink[index]);
-    }
-  } else {
-    for (let index = 0; index < dataDrink.length; index += 1) {
-      dataLen.push(dataDrink[index]);
-    }
-  }
+  // Limit the number of displayed drinks to 12
+  const dataLen = dataDrink.slice(0, 12);
 
   if (loading) return <div>Loading...</div>;
 
-  console.log(dataLen);
+  if (!dataDrink || dataDrink.length === 0) {
+    return (
+      <div>
+        {stateFilterByCategoryDrinks === 'All'
+          ? 'No drinks found.'
+          : `No drinks found for the selected category: ${stateFilterByCategoryDrinks}.`}
+      </div>
+    );
+  }
 
   return (
     <Layout titlePage="Drinks" haveSearch haveFooter>
       <Filters type="Drinks" />
-      { dataLen.map((drink :any, index) => (
-        <NavLink to={ `/drinks/${drink.idDrink}` } key={ index }>
+      <div>
+        <HeroSection imageSrc={ drinksImage } title="Delicious Drinks" altText="A table full of delicious drinks" />
+      </div>
+      <div className={ styles.mainBlock }>
+      {dataLen.map((drink, index) => (
+        <NavLink to={`/drinks/${drink.idDrink}`} key={index}>
           <Recipes
-            key={ index }
-            index={ index }
-            id={ drink.idDrink }
-            name={ drink.strDrink }
-            image={ drink.strDrinkThumb }
+            index={index}
+            id={drink.idDrink}
+            name={drink.strDrink}
+            image={drink.strDrinkThumb}
+            category={drink.strCategory}
+            alcoholic={drink.strAlcoholic}
             type="drinks"
           />
         </NavLink>
       ))}
+      </div>
     </Layout>
   );
 }
+
 export default Drinks;

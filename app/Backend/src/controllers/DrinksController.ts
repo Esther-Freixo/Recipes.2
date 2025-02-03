@@ -21,4 +21,10 @@ export default class drinksController {
     const serviceResponse = await this.drinksService.findByName(name);
     return res.status(mapStatusHTTP(serviceResponse.status)).json(serviceResponse.data);
   }
+
+  public async getDrinkByCategory(req: Request, res: Response): Promise<Response> {
+    const { category } = req.params;
+    const serviceResponse = await this.drinksService.findByCategory(category);
+    return res.status(mapStatusHTTP(serviceResponse.status)).json(serviceResponse.data);
+  }
 }

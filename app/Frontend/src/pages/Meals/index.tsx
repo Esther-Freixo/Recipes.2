@@ -4,81 +4,79 @@ import Layout from '../../components/Layout';
 import Recipes from '../../components/Recipes';
 import Filters from '../../components/Filters.tsx';
 import AppContext from '../../context/AppContext';
+import styles from "./meals.module.css";
+import HeroSection from '../../components/HeroSection';
+import mealsImage from '../../images/img.webp'
 
 function Meals() {
-  const {
-    stateFilterByCategoryMeals,
-  } = useContext(AppContext);
+  const { stateFilterByCategoryMeals } = useContext(AppContext);
 
   const [dataMeal, setDataMeal] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const backendUrl = import.meta.env.VITE_API_BASE_URL; // Use the backend URL from .env
+
   const refresh = useCallback(() => {
-    let url = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
+    let url = `${backendUrl}/meals`;
 
-    if (stateFilterByCategoryMeals === 'All') url = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
+    if (stateFilterByCategoryMeals !== 'All') {
+      url = `${backendUrl}/meals/category/${stateFilterByCategoryMeals}`;
+    }
 
-    if (stateFilterByCategoryMeals === 'Beef') url = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Beef';
-
-    if (stateFilterByCategoryMeals === 'Breakfast') url = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Breakfast';
-
-    if (stateFilterByCategoryMeals === 'Chicken') url = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Chicken';
-
-    if (stateFilterByCategoryMeals === 'Dessert') url = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Dessert';
-
-    if (stateFilterByCategoryMeals === 'Goat') url = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Goat';
+    setLoading(true);
 
     fetch(url)
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Error fetching data: ${response.statusText}`);
+        }
+        return response.json();
+      })
       .then((dataFetch) => {
-        // aqui iriamos setar o dataFetch no estado global, mas temporariamente iremos apenas mandar pra o estado local
-        setDataMeal(dataFetch.meals);
+        setDataMeal(dataFetch || []); // Ensure it's always an array
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error('Error fetching meals:', error);
+        setDataMeal([]); // Set empty data on error
         setLoading(false);
       });
-  }, [stateFilterByCategoryMeals]);
+  }, [backendUrl, stateFilterByCategoryMeals]);
 
   useEffect(() => {
     refresh();
   }, [refresh]);
 
-  // console.log(dataMeal);
+  const dataLen = dataMeal.slice(0, 12); // Limit to 12 items
 
-  // const filteredCategory = dataMeal.filter((meal: any) => {
-  //   if (stateFilterByCategoryMeals === '') return meal;
-  //   return meal.strCategory === stateFilterByCategoryMeals;
-  // });
-
-  const dataLen: [] = [];
-
-  if (dataMeal.length >= 12) {
-    for (let index = 0; index < 12; index += 1) {
-      dataLen.push(dataMeal[index]);
-    }
-  } else {
-    for (let index = 0; index < dataMeal.length; index += 1) {
-      dataLen.push(dataMeal[index]);
-    }
-  }
   if (loading) return <div>Loading...</div>;
+
+  if (!dataMeal || dataMeal.length === 0) {
+    return <div>No meals found for the selected category.</div>;
+  }
 
   return (
     <Layout titlePage="Meals" haveSearch haveFooter>
       <Filters type="Meals" />
-      { dataLen.map((meal: any, index) => (
-        <NavLink to={ `/meals/${meal.idMeal}` } key={ index }>
-          <Recipes
-            key={ index }
-            index={ index }
-            id={ meal.idMeal }
-            name={ meal.strMeal }
-            image={ meal.strMealThumb }
-            // category={ meal.strCategory }
-            // area={ meal.strArea }
-            type="comidas"
-          />
-        </NavLink>
-      ))}
-
+      <div>
+        <HeroSection imageSrc={ mealsImage } title="Delicious Meals" altText="A table full of delicious food" />
+      </div>
+      <div className={ styles.mainBlock }>
+        {dataLen.map((meal: any, index) => (
+          <NavLink to={`/meals/${meal.idMeal}`} key={index}>
+            <Recipes
+              key={index}
+              index={index}
+              id={meal.idMeal}
+              name={meal.strMeal}
+              image={meal.strMealThumb}
+              category={meal.strCategory}
+              area={meal.strArea}
+              type="comidas"
+            />
+          </NavLink>
+        ))}
+    </div>
     </Layout>
   );
 }

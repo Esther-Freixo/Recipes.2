@@ -29,4 +29,9 @@ export default class drinksService {
     const drink = await this.drinksModel.findByName(name);
     return { status: 'SUCCESSFUL', data: drink };
   }
+
+  public async findByCategory(category: string): Promise<ServiceResponse<IDrinks[]>> {
+    const drink = await this.drinksModel.findByCategory(category);
+    return { status: 'SUCCESSFUL', data: drink };
+  }
 }

@@ -1,74 +1,84 @@
 import { useCallback, useContext, useEffect, useState } from 'react';
 import AppContext from '../../context/AppContext';
 
+interface MealsCategory {
+  strCategory: string;
+}
+
 function FiltersMeals() {
   const {
     setStateFilterByCategoryMeals, stateFilterByCategoryMeals } = useContext(AppContext);
   const [dataMeals, setDataMeals] = useState([]);
   const [loading, setLoading] = useState(true);
+  const apiUrl = import.meta.env.VITE_API_BASE_URL;
 
 
   const refresh = useCallback(() => {
-    fetch('http://localhost:3001/meals')
-      .then((response) => response.json())
+    setLoading(true)
+    fetch(`${apiUrl}/meals`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Failed to fetch meals: ${response.statusText}`);
+        }
+        return response.json();
+      })
       .then((dataFetch) => {
-        const processedMeals = dataFetch.meals.map((meal: any) => {
-          const newStrCategory = meal.strCategory === 'Other / Unknown' ? meal.strCategory.replace(/\s/g, '') : meal.strCategory;
+        const processedMeals = dataFetch.map((meal: MealsCategory) => {
+          const newStrCategory = meal.strCategory === 'Other / Unknown'
+            ? meal.strCategory.replace(/\s/g, '')
+            : meal.strCategory;
           return {
             ...meal,
             strCategory: newStrCategory,
           };
         });
         setDataMeals(processedMeals);
-        setLoading(false);
-      });
-  }, []);
+      })
+      .catch ((error) => {
+      console.error('Error fetching meals:', error);
+    })
+    .finally(() => setLoading(false))
+}, [apiUrl]);
 
-  useEffect(() => {
-    refresh();  
-  }, [refresh]);
+useEffect(() => {
+  refresh();
+}, [refresh]);
 
-  const dataLen5: [] = [];
+const dataLen5 = dataMeals.slice(0, 5);
 
-  for (let index = 0; index < 5; index += 1) {
-    dataLen5.push(dataMeals[index]);
+const handleClick = (category: string) => {
+  if (stateFilterByCategoryMeals === category ) {
+    setStateFilterByCategoryMeals('All');
+  } else {
+    setStateFilterByCategoryMeals(category);
   }
+}
 
-  const handleClick = (category: string) => {
-    if (stateFilterByCategoryMeals === 'All' && category === 'All') return;
+if (loading) return <div>Loading...</div>;
 
-    if (category === stateFilterByCategoryMeals) {
-      setStateFilterByCategoryMeals('All');
-    } else {
-      setStateFilterByCategoryMeals(category);
+return (
+  <div>
+    <button
+      onClick={() => handleClick('All')}
+      data-testid="All-category-filter"
+    >
+      All
+    </button>
+    {
+      dataLen5.map((meal: any, index) => (
+        <button
+          key={index}
+          data-testid={`${meal.strCategory}-category-filter`}
+          onClick={() => {
+            handleClick(meal.strCategory);
+          }}
+        >
+          {meal.strCategory}
+        </button>
+      ))
     }
-  };
-
-  if (loading) return <div>Loading...</div>;
-
-  return (
-    <div>
-      <button
-        onClick={ () => handleClick('All') }
-        data-testid="All-category-filter"
-      >
-        All
-      </button>
-      {
-       dataLen5.map((meal :any, index) => (
-         <button
-           key={ index }
-           data-testid={ `${meal.strCategory}-category-filter` }
-           onClick={ () => {
-             handleClick(meal.strCategory);
-           } }
-         >
-           { meal.strCategory }
-         </button>
-       ))
-      }
-    </div>
-  );
+  </div>
+);
 }
 
 export default FiltersMeals;

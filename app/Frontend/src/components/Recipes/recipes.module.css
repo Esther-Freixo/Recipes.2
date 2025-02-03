@@ -1,0 +1,55 @@
+.recipeContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.recipeCard {
+  align-items: stretch;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 400px;
+  width: 100%;
+
+}
+
+.image {
+  border-radius: 12px;
+  display: block;
+  height: 550px;
+  margin: 0 auto;
+  max-width: 100%;
+  min-height: 300px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: row-reverse;
+  width: auto;
+}
+
+.title {
+  color: rgb(33, 37, 41);
+  font-size: 30px;
+  width: 100%;
+
+}
+
+.cardInfo p {
+  font-weight: 300;
+}
+
+.cardSubInfo {
+  background-color: white;
+  color: rgb(81, 87, 94);
+  display: flex;
+  font-size: 16px;
+  gap: 12px;
+  justify-content: flex-end;
+  padding: 4px 0;
+  width: 100%;
+}

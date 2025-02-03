@@ -6,11 +6,11 @@ import styles from './style.module.css';
 function Footer() {
   return (
     <div className={ styles.footer } data-testid="footer">
-      <NavLink to="/drinks">
-        <img src={ drinkIcon } alt="Drink Icon" data-testid="drinks-bottom-btn" />
-      </NavLink>
       <NavLink to="/meals">
-        <img src={ mealIcon } alt="Meal Icon" data-testid="meals-bottom-btn" />
+        <img src={ mealIcon } alt="Meal Icon" data-testid="meals-bottom-btn" className={ styles.mealsIcon }/>
+      </NavLink>
+      <NavLink to="/drinks">
+        <img src={ drinkIcon } alt="Drink Icon" data-testid="drinks-bottom-btn" className={ styles.drinkIcon } />
       </NavLink>
 
     </div>

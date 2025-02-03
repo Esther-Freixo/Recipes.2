@@ -1,0 +1,13 @@
+.mainBlock {
+  align-content: start;
+  align-items: stretch;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  justify-content: center;
+  padding: 32px 36px;
+}
+
+.mainBlock a {
+  text-decoration: none;
+}

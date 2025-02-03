@@ -1,16 +1,25 @@
 .footer {
-  align-items: center; /* Centraliza os ícones verticalmente */
-  background-color: #f8f9fa; /* Cor de fundo do rodapé */
+  align-items: center;
+  background-color: rgb(87, 65, 125, 0.5);
   bottom: 0;
   display: flex;
-  height: 50px; /* Ajuste de acordo com suas necessidades */
-  justify-content: space-around; /* Espaçamento igual entre os ícones */
+  height: 40px;
+  justify-content: space-around;
   left: 0;
   position: fixed;
   right: 0;
 }
 
 .footer img {
-  height: 30px; /* Altura dos ícones */
-  width: 30px; /* Largura dos ícones */
+  height: 25px;
+  width: 25px;
+  color: white
+}
+
+.footer img:hover {
+  background-color: aqua;
+}
+
+.mealsIcon {
+  color: white;
 }

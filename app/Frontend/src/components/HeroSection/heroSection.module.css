@@ -1,0 +1,39 @@
+.hero {
+  height: 45rem;
+  max-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.heroImage {
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  position: absolute; /* Ensure it stays in place */
+  top: 0;
+  width: 100%;
+}
+
+.overlay {
+  background-image: radial-gradient(circle at center, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1; /* Keep it above the image but behind text */
+}
+
+.heroText {
+  background: transparent;
+  color: white;
+  font-family: CotorisBold , sans-serif;
+  font-size: 2.5rem;
+  left: 50%;
+  position: absolute;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1; /* Keep text visible above overlay */
+}
